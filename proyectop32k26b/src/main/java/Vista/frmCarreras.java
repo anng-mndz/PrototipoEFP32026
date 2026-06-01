@@ -236,7 +236,7 @@ public class frmCarreras extends javax.swing.JFrame {
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         int codigo = Integer.parseInt(txtCarrera.getText());
 
-        Modelo.eliminar(codigo);
+        modelo.eliminar(codigo);
         listarTabla();
     }//GEN-LAST:event_btnEliminarActionPerformed
 
@@ -246,19 +246,19 @@ public class frmCarreras extends javax.swing.JFrame {
         int codigo_facultad = Integer.parseInt(txtFacultad.getText());
         int status_carrera = Integer.parseInt(txtStatus.getText());
 
-        Modelo.insertar()
+        modelo.insertar()
         listarTabla();
     }//GEN-LAST:event_btnInsertarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         int id = Integer.parseInt(txtCarrera.getText());
 
-        AsignacionAplicacionUsuario a = controlador.buscarAsignacion(id);
+        carreras a = modelo.buscarAsignacion(codigo_carrera);
 
         if (a != null) {
 
-            txtNombre.setText(String.valueOf(a.getAplcodigo()));
-            txtFacultad.setText(String.valueOf(a.getUsucodigo()));
+            txtNombre.setText(String.valueOf(a.getnombre_carrera()));
+            txtFacultad.setText(String.valueOf(a.getcodigo_facultad()));
 
         } else {
 
@@ -273,7 +273,7 @@ public class frmCarreras extends javax.swing.JFrame {
         int codigo_facultad = Integer.parseInt(txtFacultad.getText());
         int status_carrera = Integer.parseInt(txtStatus.getText());
 
-        Modelo.modificar(codigo_carrera, nombre_carrera, codigo_facultad, status_carrera);
+        modelo.modificar(codigo_carrera, nombre_carrera, codigo_facultad, status_carrera);
         listarTabla();
     }//GEN-LAST:event_btnActualizarActionPerformed
 
