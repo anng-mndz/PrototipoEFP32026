@@ -427,19 +427,14 @@ public void configurarVisibilidadBotones(List<Integer> appsPermitidas) {
     }//GEN-LAST:event_frmProcesoAplicacionUsuarioActionPerformed
 
     private void CarrerasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CarrerasActionPerformed
-    frmCarreras ventana = new frmCarreras();
+    System.out.println("entre a proceso Asignacion Perfil Usuario");
 
-    jDesktopPane1.add(ventana);
-
-    Dimension desktopSize = jDesktopPane1.getSize();
-    Dimension frameSize = ventana.getSize();
-
-    ventana.setLocation(
-            (desktopSize.width - frameSize.width) / 2,
-            (desktopSize.height - frameSize.height) / 2
-    );
-
-    ventana.setVisible(true);
+        frmCarreras ventana = new frmCarreras();
+        jDesktopPane1.add(ventana);
+        Dimension desktopSize = jDesktopPane1.getSize();
+        Dimension FrameSize = ventana.getSize();
+        ventana.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+        ventana.setVisible(true);   
     }//GEN-LAST:event_CarrerasActionPerformed
 
     /**
