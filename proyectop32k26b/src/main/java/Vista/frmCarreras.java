@@ -1,4 +1,5 @@
 package Vista;
+
 import Controlador.clsCarreras;
 import Modelo.CarrerasDao;
 import Modelo.Conexion;
@@ -11,14 +12,42 @@ import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.view.JasperViewer;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 /**
  *Luis Angel Méndez Fuentes
  * 9959-24-6845
  */
-public class frmCarreras extends javax.swing.JFrame {
 
+public class frmCarreras extends javax.swing.JFrame {
+private CarrerasDao modelo = new CarrerasDao();
+private String usuario = "admin";
+
+private void listarTabla() {
+
+    DefaultTableModel tabla = new DefaultTableModel();
+
+    tabla.addColumn("CODIGO");
+    tabla.addColumn("NOMBRE");
+    tabla.addColumn("FACULTAD");
+    tabla.addColumn("ESTATUS");
+
+    for (clsCarreras c : modelo.listarTodos()) {
+
+        tabla.addRow(new Object[]{
+            c.getCodigoCarrera(),
+            c.getNombreCarrera(),
+            c.getCodigoFacultad(),
+            c.getEstatusCarrera()
+        });
+    }
+
+    tablaCarrera.setModel(tabla);
+}
 public frmCarreras() {
     initComponents();
+    listarTabla();
+
 
     btnReporte.addActionListener(e -> {
 
@@ -285,56 +314,80 @@ public frmCarreras() {
     }//GEN-LAST:event_btnEliminarTodoActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-          int codigo_carrera = Integer.parseInt(txtCarrera.getText());
+  if (modelo.eliminar(txtCarrera.getText(), usuario)) {
 
-    modelo.eliminar(codigo_carrera);
+        JOptionPane.showMessageDialog(this,
+                "Registro eliminado");
 
-    listarTabla();
+        listarTabla();
+
+    } else {
+
+        JOptionPane.showMessageDialog(this,
+                "No se pudo eliminar");
+    }
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnInsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertarActionPerformed
-    int codigo_carrera = Integer.parseInt(txtCarrera.getText());
-    String nombre_carrera = txtNombre.getText();
-    int codigo_facultad = Integer.parseInt(txtFacultad.getText());
-    String status_carrera = txtStatus.getText();
+    clsCarreras carrera = new clsCarreras(
+            txtCarrera.getText(),
+            txtNombre.getText(),
+            txtFacultad.getText(),
+            txtStatus.getText()
+    );
 
-    modelo.insertar(codigo_carrera, nombre_carrera,
-                    codigo_facultad, status_carrera);
+    if (modelo.insertar(carrera, usuario)) {
 
-    listarTabla();
+        JOptionPane.showMessageDialog(this,
+                "Registro insertado correctamente");
+
+        listarTabla();
+
+    } else {
+
+        JOptionPane.showMessageDialog(this,
+                "Error al insertar");
+    }
     }//GEN-LAST:event_btnInsertarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-    int codigo_carrera = Integer.parseInt(txtCarrera.getText());
 
-    clsCarreras c = modelo.buscarCarrera(codigo_carrera);
+    clsCarreras c =
+            modelo.consultar(txtCarrera.getText(), usuario);
 
     if (c != null) {
 
-        txtNombre.setText(c.getNombre_carrera());
-        txtFacultad.setText(String.valueOf(c.getCodigo_facultad()));
-        txtStatus.setText(c.getStatus_carrera());
+        txtNombre.setText(c.getNombreCarrera());
+        txtFacultad.setText(c.getCodigoFacultad());
+        txtStatus.setText(c.getEstatusCarrera());
 
     } else {
 
         JOptionPane.showMessageDialog(this,
                 "Registro no encontrado");
-
     }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
-         int codigo_carrera = Integer.parseInt(txtCarrera.getText());
-    String nombre_carrera = txtNombre.getText();
-    int codigo_facultad = Integer.parseInt(txtFacultad.getText());
-    String status_carrera = txtStatus.getText();
+    clsCarreras carrera = new clsCarreras(
+            txtCarrera.getText(),
+            txtNombre.getText(),
+            txtFacultad.getText(),
+            txtStatus.getText()
+    );
 
-    modelo.modificar(codigo_carrera,
-                     nombre_carrera,
-                     codigo_facultad,
-                     status_carrera);
+    if (modelo.modificar(carrera, usuario)) {
 
-    listarTabla();
+        JOptionPane.showMessageDialog(this,
+                "Registro actualizado");
+
+        listarTabla();
+
+    } else {
+
+        JOptionPane.showMessageDialog(this,
+                "No se pudo actualizar");
+    }
     }//GEN-LAST:event_btnActualizarActionPerformed
 
     private void txtCarreraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCarreraActionPerformed
