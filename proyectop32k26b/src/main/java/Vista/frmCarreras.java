@@ -1,18 +1,53 @@
-
 package Vista;
 import Controlador.clsCarreras;
 import Modelo.CarrerasDao;
+import Modelo.Conexion;
+import java.io.File;
+import java.sql.Connection;
+import java.util.HashMap;
+import java.util.Map;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.view.JasperViewer;
 /**
  *Luis Angel Méndez Fuentes
  * 9959-24-6845
  */
 public class frmCarreras extends javax.swing.JFrame {
 
-    public frmCarreras() {
-        initComponents();
-    }
+public frmCarreras() {
+    initComponents();
 
-    
+    btnReporte.addActionListener(e -> {
+
+        Connection conn = null;
+        Map<String, Object> p = new HashMap<>();
+
+        try {
+
+            conn = Conexion.getConnection();
+
+            JasperReport report =
+                    JasperCompileManager.compileReport(
+                    new File("").getAbsolutePath()
+                    + "/src/main/java/Reportes/CarrerasReporte.jrxml");
+
+            JasperPrint print =
+                    JasperFillManager.fillReport(report, p, conn);
+
+            JasperViewer view =
+                    new JasperViewer(print, false);
+
+            view.setTitle("Reporte Carreras");
+            view.setVisible(true);
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    });
+}
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -33,6 +68,8 @@ public class frmCarreras extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         txtStatus = new javax.swing.JTextField();
+        btnReporte = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -136,6 +173,10 @@ public class frmCarreras extends javax.swing.JFrame {
 
         txtStatus.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
+        btnReporte.setText("Reportes");
+
+        jButton2.setText("Ayuda");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -164,10 +205,6 @@ public class frmCarreras extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel4)
                 .addGap(77, 77, 77))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -178,12 +215,22 @@ public class frmCarreras extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnInsertar)
                         .addGap(18, 18, 18)
-                        .addComponent(btnBuscar)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnActualizar)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnEliminar)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(btnReporte)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButton2))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnBuscar)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnActualizar)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnEliminar)))))
                 .addGap(19, 19, 19))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -214,7 +261,11 @@ public class frmCarreras extends javax.swing.JFrame {
                     .addComponent(btnBuscar)
                     .addComponent(btnActualizar)
                     .addComponent(btnEliminar))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnReporte)
+                    .addComponent(jButton2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24))
         );
@@ -234,47 +285,56 @@ public class frmCarreras extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEliminarTodoActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        int codigo = Integer.parseInt(txtCarrera.getText());
+          int codigo_carrera = Integer.parseInt(txtCarrera.getText());
 
-        modelo.eliminar(codigo);
-        listarTabla();
+    modelo.eliminar(codigo_carrera);
+
+    listarTabla();
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnInsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertarActionPerformed
-        int codigo_carrera = Integer.parseInt(txtCarrera.getText());
-        int nombre_carrera = Integer.parseInt(txtNombre.getText());
-        int codigo_facultad = Integer.parseInt(txtFacultad.getText());
-        int status_carrera = Integer.parseInt(txtStatus.getText());
+    int codigo_carrera = Integer.parseInt(txtCarrera.getText());
+    String nombre_carrera = txtNombre.getText();
+    int codigo_facultad = Integer.parseInt(txtFacultad.getText());
+    String status_carrera = txtStatus.getText();
 
-        modelo.insertar()
-        listarTabla();
+    modelo.insertar(codigo_carrera, nombre_carrera,
+                    codigo_facultad, status_carrera);
+
+    listarTabla();
     }//GEN-LAST:event_btnInsertarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        int id = Integer.parseInt(txtCarrera.getText());
+    int codigo_carrera = Integer.parseInt(txtCarrera.getText());
 
-        carreras a = modelo.buscarAsignacion(codigo_carrera);
+    clsCarreras c = modelo.buscarCarrera(codigo_carrera);
 
-        if (a != null) {
+    if (c != null) {
 
-            txtNombre.setText(String.valueOf(a.getnombre_carrera()));
-            txtFacultad.setText(String.valueOf(a.getcodigo_facultad()));
+        txtNombre.setText(c.getNombre_carrera());
+        txtFacultad.setText(String.valueOf(c.getCodigo_facultad()));
+        txtStatus.setText(c.getStatus_carrera());
 
-        } else {
+    } else {
 
-            JOptionPane.showMessageDialog(null, "Registro no encontrado");
+        JOptionPane.showMessageDialog(this,
+                "Registro no encontrado");
 
-        }
+    }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
-        int codigo_carrera = Integer.parseInt(txtCarrera.getText());
-        int nombre_carrera = Integer.parseInt(txtNombre.getText());
-        int codigo_facultad = Integer.parseInt(txtFacultad.getText());
-        int status_carrera = Integer.parseInt(txtStatus.getText());
+         int codigo_carrera = Integer.parseInt(txtCarrera.getText());
+    String nombre_carrera = txtNombre.getText();
+    int codigo_facultad = Integer.parseInt(txtFacultad.getText());
+    String status_carrera = txtStatus.getText();
 
-        modelo.modificar(codigo_carrera, nombre_carrera, codigo_facultad, status_carrera);
-        listarTabla();
+    modelo.modificar(codigo_carrera,
+                     nombre_carrera,
+                     codigo_facultad,
+                     status_carrera);
+
+    listarTabla();
     }//GEN-LAST:event_btnActualizarActionPerformed
 
     private void txtCarreraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCarreraActionPerformed
@@ -322,6 +382,8 @@ public class frmCarreras extends javax.swing.JFrame {
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnEliminarTodo;
     private javax.swing.JButton btnInsertar;
+    private javax.swing.JButton btnReporte;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
