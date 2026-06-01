@@ -17,29 +17,29 @@ public class frmCarreras extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtAplCodigo = new javax.swing.JTextField();
+        txtNombre = new javax.swing.JTextField();
         btnEliminarTodo = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tablaCarrera = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
-        txtUsuCodigo = new javax.swing.JTextField();
+        txtFacultad = new javax.swing.JTextField();
         btnInsertar = new javax.swing.JButton();
         btnBuscar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         btnActualizar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        txtID = new javax.swing.JTextField();
+        txtCarrera = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        txtUsuCodigo1 = new javax.swing.JTextField();
+        txtStatus = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        txtAplCodigo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        txtAplCodigo.addActionListener(new java.awt.event.ActionListener() {
+        txtNombre.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtAplCodigoActionPerformed(evt);
+                txtNombreActionPerformed(evt);
             }
         });
 
@@ -82,7 +82,7 @@ public class frmCarreras extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 18)); // NOI18N
         jLabel3.setText("CODIGO FACULTAD");
 
-        txtUsuCodigo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtFacultad.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
         btnInsertar.setBackground(new java.awt.Color(0, 0, 102));
         btnInsertar.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
@@ -121,10 +121,10 @@ public class frmCarreras extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 18)); // NOI18N
         jLabel1.setText("CODIGO CARRERA");
 
-        txtID.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        txtID.addActionListener(new java.awt.event.ActionListener() {
+        txtCarrera.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtCarrera.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtIDActionPerformed(evt);
+                txtCarreraActionPerformed(evt);
             }
         });
 
@@ -134,7 +134,7 @@ public class frmCarreras extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 18)); // NOI18N
         jLabel5.setText("STATUS");
 
-        txtUsuCodigo1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtStatus.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -146,19 +146,19 @@ public class frmCarreras extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(33, 33, 33)
-                        .addComponent(txtAplCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtCarrera, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtUsuCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtFacultad, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtUsuCodigo1, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(60, 60, 60))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -193,19 +193,19 @@ public class frmCarreras extends javax.swing.JFrame {
                 .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCarrera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(txtAplCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(txtUsuCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtFacultad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(txtUsuCodigo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33)
                 .addComponent(btnEliminarTodo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -222,44 +222,43 @@ public class frmCarreras extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtAplCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAplCodigoActionPerformed
+    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtAplCodigoActionPerformed
+    }//GEN-LAST:event_txtNombreActionPerformed
 
     private void btnEliminarTodoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarTodoActionPerformed
-
-        txtID.setText("");
-        txtAplCodigo.setText("");
-        txtUsuCodigo.setText("");
+        txtCarrera.setText("");
+        txtNombre.setText("");
+        txtFacultad.setText("");
+        txtStatus.setText("");
     }//GEN-LAST:event_btnEliminarTodoActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        int id = Integer.parseInt(txtID.getText());
+        int codigo = Integer.parseInt(txtCarrera.getText());
 
-        controlador.eliminarAsignacion(id);
-
+        Modelo.eliminar(codigo);
         listarTabla();
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnInsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertarActionPerformed
+        int codigo_carrera = Integer.parseInt(txtCarrera.getText());
+        int nombre_carrera = Integer.parseInt(txtNombre.getText());
+        int codigo_facultad = Integer.parseInt(txtFacultad.getText());
+        int status_carrera = Integer.parseInt(txtStatus.getText());
 
-        int aplcodigo = Integer.parseInt(txtAplCodigo.getText());
-        int usucodigo = Integer.parseInt(txtUsuCodigo.getText());
-
-        controlador.agregarAsignacion(0, aplcodigo, usucodigo);
-
+        Modelo.insertar()
         listarTabla();
     }//GEN-LAST:event_btnInsertarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        int id = Integer.parseInt(txtID.getText());
+        int id = Integer.parseInt(txtCarrera.getText());
 
         AsignacionAplicacionUsuario a = controlador.buscarAsignacion(id);
 
         if (a != null) {
 
-            txtAplCodigo.setText(String.valueOf(a.getAplcodigo()));
-            txtUsuCodigo.setText(String.valueOf(a.getUsucodigo()));
+            txtNombre.setText(String.valueOf(a.getAplcodigo()));
+            txtFacultad.setText(String.valueOf(a.getUsucodigo()));
 
         } else {
 
@@ -269,18 +268,18 @@ public class frmCarreras extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
-        int id = Integer.parseInt(txtID.getText());
-        int aplcodigo = Integer.parseInt(txtAplCodigo.getText());
-        int usucodigo = Integer.parseInt(txtUsuCodigo.getText());
+        int codigo_carrera = Integer.parseInt(txtCarrera.getText());
+        int nombre_carrera = Integer.parseInt(txtNombre.getText());
+        int codigo_facultad = Integer.parseInt(txtFacultad.getText());
+        int status_carrera = Integer.parseInt(txtStatus.getText());
 
-        controlador.actualizarAsignacion(id, aplcodigo, usucodigo);
-
+        Modelo.modificar(codigo_carrera, nombre_carrera, codigo_facultad, status_carrera);
         listarTabla();
     }//GEN-LAST:event_btnActualizarActionPerformed
 
-    private void txtIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIDActionPerformed
+    private void txtCarreraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCarreraActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtIDActionPerformed
+    }//GEN-LAST:event_txtCarreraActionPerformed
 
     /**
      * @param args the command line arguments
@@ -330,9 +329,9 @@ public class frmCarreras extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tablaCarrera;
-    private javax.swing.JTextField txtAplCodigo;
-    private javax.swing.JTextField txtID;
-    private javax.swing.JTextField txtUsuCodigo;
-    private javax.swing.JTextField txtUsuCodigo1;
+    private javax.swing.JTextField txtCarrera;
+    private javax.swing.JTextField txtFacultad;
+    private javax.swing.JTextField txtNombre;
+    private javax.swing.JTextField txtStatus;
     // End of variables declaration//GEN-END:variables
 }
