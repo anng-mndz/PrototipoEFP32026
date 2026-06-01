@@ -427,7 +427,7 @@ public void configurarVisibilidadBotones(List<Integer> appsPermitidas) {
     }//GEN-LAST:event_frmProcesoAplicacionUsuarioActionPerformed
 
     private void CarrerasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CarrerasActionPerformed
-    System.out.println("entre a proceso Asignacion Perfil Usuario");
+    System.out.println("entre a Carreras");
 
         frmCarreras ventana = new frmCarreras();
         jDesktopPane1.add(ventana);

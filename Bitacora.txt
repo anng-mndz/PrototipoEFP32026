@@ -1,0 +1,71 @@
+commit 579919a246c79b60d76a24038f81c60d229a09b8
+Author: anng-mndz <lmendezf1@miumg.edu.gt>
+Date:   Mon Jun 1 11:46:13 2026 -0600
+
+    Cambios
+
+commit 82bf20c46cc2c0f95dba53b6cfd5d9e655673ac1
+Author: anng-mndz <lmendezf1@miumg.edu.gt>
+Date:   Mon Jun 1 11:32:58 2026 -0600
+
+    MDI funcionando
+
+commit a11bcaa8680c10086487f6ef784f3865fd5f0181
+Author: anng-mndz <lmendezf1@miumg.edu.gt>
+Date:   Mon Jun 1 11:19:42 2026 -0600
+
+    Arreglos en formularios, reportes
+
+commit 8db4d905359c5558163af9444c2b8e718c3b5814
+Author: anng-mndz <lmendezf1@miumg.edu.gt>
+Date:   Mon Jun 1 11:18:28 2026 -0600
+
+    Agregue reportes y formulario medio funcional
+
+commit fd124ad04388403627be89e5f098e04232f926ac
+Author: anng-mndz <lmendezf1@miumg.edu.gt>
+Date:   Mon Jun 1 11:04:50 2026 -0600
+
+    Formulario ya mejorado
+
+commit 47618c688d47f32586f28c15b35ca2b2cb5a8e93
+Author: anng-mndz <lmendezf1@miumg.edu.gt>
+Date:   Mon Jun 1 10:55:56 2026 -0600
+
+    Agregue reportes
+
+commit 865888a465bbcc2b6ce9d8538aa1fb9ac9892953
+Author: anng-mndz <lmendezf1@miumg.edu.gt>
+Date:   Mon Jun 1 10:47:31 2026 -0600
+
+    Cambios en formulario V2
+
+commit 490c1e25a7ce5c2fcf06bfdba6da3551e4e33a50
+Author: anng-mndz <lmendezf1@miumg.edu.gt>
+Date:   Mon Jun 1 10:43:51 2026 -0600
+
+    Cambios en formulario
+
+commit 02066080f8c8b7ace3c4716fbe4fb87138128dd3
+Author: anng-mndz <lmendezf1@miumg.edu.gt>
+Date:   Mon Jun 1 10:38:41 2026 -0600
+
+    Formulario
+
+commit b3b9aec19dd1a6e54c3d7e466448db52d9970ab9
+Author: anng-mndz <lmendezf1@miumg.edu.gt>
+Date:   Mon Jun 1 10:15:51 2026 -0600
+
+    Agregue clase, Dao y Script de Carreras
+
+commit 4796a3ba0f7c91429200e34a2f57f771af601a28
+Author: anng-mndz <lmendezf1@miumg.edu.gt>
+Date:   Mon Jun 1 09:44:00 2026 -0600
+
+    Copia de proyecto
+
+commit fee46689001294e14553874e34c4f26f47aa4487
+Author: Angel Mendez <lmendezf1@miumg.edu.gt>
+Date:   Mon Jun 1 09:40:07 2026 -0600
+
+    Initial commit

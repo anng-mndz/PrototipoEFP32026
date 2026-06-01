@@ -23,6 +23,7 @@ import javax.swing.table.DefaultTableModel;
 public class frmCarreras extends javax.swing.JInternalFrame {
 private CarrerasDao modelo = new CarrerasDao();
 private String usuario = "admin";
+frmCarreras ventana = new frmCarreras();
 
 private void listarTabla() {
 
