@@ -17,6 +17,7 @@ import javax.swing.table.DefaultTableModel;
 /**
  *Luis Angel Méndez Fuentes
  * 9959-24-6845
+ * Formulario de Carreras
  */
 
 public class frmCarreras extends javax.swing.JFrame {
