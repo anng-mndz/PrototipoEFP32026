@@ -79,6 +79,7 @@ public class MdiSeguridad extends javax.swing.JFrame {
         frmMantenimientoBitacora = new javax.swing.JMenuItem();
         mnuReportes = new javax.swing.JMenu();
         mnuAyudas = new javax.swing.JMenu();
+        Carreras = new javax.swing.JMenu();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -223,6 +224,14 @@ public class MdiSeguridad extends javax.swing.JFrame {
 
         mnuAyudas.setText("Ayudas");
         mnuGeneral.add(mnuAyudas);
+
+        Carreras.setText("Carreras");
+        Carreras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CarrerasActionPerformed(evt);
+            }
+        });
+        mnuGeneral.add(Carreras);
 
         setJMenuBar(mnuGeneral);
 
@@ -417,6 +426,22 @@ public void configurarVisibilidadBotones(List<Integer> appsPermitidas) {
         ventana.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
     }//GEN-LAST:event_frmProcesoAplicacionUsuarioActionPerformed
 
+    private void CarrerasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CarrerasActionPerformed
+    frmCarreras ventana = new frmCarreras();
+
+    jDesktopPane1.add(ventana);
+
+    Dimension desktopSize = jDesktopPane1.getSize();
+    Dimension frameSize = ventana.getSize();
+
+    ventana.setLocation(
+            (desktopSize.width - frameSize.width) / 2,
+            (desktopSize.height - frameSize.height) / 2
+    );
+
+    ventana.setVisible(true);
+    }//GEN-LAST:event_CarrerasActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -460,6 +485,7 @@ public void configurarVisibilidadBotones(List<Integer> appsPermitidas) {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu Carreras;
     private javax.swing.JMenuItem frmMantenimientoAplicaciones;
     private javax.swing.JMenuItem frmMantenimientoBitacora;
     private javax.swing.JMenuItem frmMantenimientoPerfiles;
